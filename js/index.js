@@ -85,7 +85,17 @@ new Vue({
       const index = dictionary.findIndex(char => char === letter);
 
       if (index === this.correctLetter) {
-        this.qIndex += 1;
+        console.log(this.qIndex);
+        if (this.qIndex === 14) {
+          this.question = "Winner";
+          this.answer1 = "";
+          this.answer2 = "";
+          this.answer3 = "";
+          this.answer4 = "";
+          this.disabled = true;
+        } else {
+          this.qIndex += 1;
+        }
       } else {
         this.disabled = true;
         this.question = "Game Over";
