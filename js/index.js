@@ -42,10 +42,10 @@ new Vue({
   methods: {
     //method to fetch questions
     async startGame() {
+      this.qIndex = 0;
       this.selected = true;
       this.disabled = false;
       this.playRound1();
-
       const res = await fetch(
         "https://opentdb.com/api.php?amount=15&type=multiple"
       );
@@ -104,6 +104,7 @@ new Vue({
         this.answer3 = "";
         this.answer4 = "";
         this.selected = false;
+
         return;
       }
     },
